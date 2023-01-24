@@ -1,0 +1,128 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width"> 
+        <title>Encriptador - Desencriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">  
+    </head>
+
+    <body>
+        <header>
+            <h1><img src="imagenes/logo.png" alt="Logo Alura" class="logo"></h1>
+        </header>
+
+        <main>
+            <section id="encriptador">
+                <textarea cols="40" rows="20" placeholder="Ingrese el texto aqui..." class="Ingreso"></textarea>
+
+                <div class="advertencia">
+                    <img src="imagenes/Vector.png" alt="advertencia" class="adv">
+                    <p class="adv">Solo letras minúsculas y sin acentos. </p>
+                </div>
+
+                <div class="botones">
+                    <button class="botonE" onclick="ocultar();" onclick="ver();">Encriptar</button>
+                    <button class="botonD" onclick="ocultar();">Desencriptar</button>
+                </div>
+
+
+            </section>
+
+            <section id="resultado">
+                <textarea cols="40" rows="20" class="visor-resultado" readonly="readonly"></textarea>
+
+                <div class="boton-copiar">
+                   <button class="copiar" onclick="copiarTexto();">Copiar</button> 
+                </div>
+                
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>"Creado por Gina Scotto"</p>
+            <p class="copyright">&copy Copyright Gigi - 2023</p>
+        </footer>
+    </body>
+</html>
+
+<script>
+
+    // funcion debug para comprobar que algo funciona
+    function test(){
+        alert("funciona correctamente.");
+    }
+
+    //La siguiente funcion sirve para que se muestren u oculten elementos en html 
+    function ocultar(){
+
+        var result = document.querySelector(".visor-resultado");
+        var copiar = document.querySelector(".copiar");
+        if(mensaje.value != ""){
+            result.style.backgroundImage = "none";
+            copiar.style.display = "block";
+            
+        }
+        
+    }
+
+
+    function encriptar(){
+        var mensaje = document.querySelector(".ingreso");
+        var mensajeDos = document.querySelector(".visor-resultado");
+        var parrafo = mensaje.value.toLowerCase();
+        var letras = "eoiau";
+        var convierte = ["enter","ober","imes","ai","ufat"];
+    
+
+        let textoEncriptado = parrafo;
+        for(var pos=0; pos < letras.length; pos++){
+            textoEncriptado = textoEncriptado.replaceAll(letras[pos],convierte[pos]);  
+        }
+
+
+        ocultar();
+        mensajeDos.value = textoEncriptado;
+
+
+
+    }
+    function desencriptar(){
+        var mensaje = document.querySelector(".ingreso");
+        var mensajeDos = document.querySelector(".visor-resultado");
+        var parrafo = mensaje.value.toLowerCase();
+        var letras = "eoiau";
+        var convierte = ["enter","ober","imes","ai","ufat"];
+    
+
+        let textoDesencriptado = parrafo;
+        for(var pos=0; pos < convierte.length; pos++){
+            textoDesencriptado = textoDesencriptado.replaceAll(convierte[pos],letras[pos]);  
+        }
+
+        ocultar();
+        mensajeDos.value = textoDesencriptado;
+    }
+
+    function copiarTexto(){
+        var texto = document.querySelector(".visor-resultado");
+        texto.select();
+        document.execCommand("copy");
+    }
+
+
+    // obtener control de elementos html como botones y textarea
+    var encripta = document.querySelector(".botonE");
+    var desencripta = document.querySelector(".botonD");
+    var mensaje = document.querySelector(".ingreso");
+
+    mensaje.focus();
+    encripta.onclick = encriptar;
+    desencripta.onclick = desencriptar;
+
+
+
+</script>

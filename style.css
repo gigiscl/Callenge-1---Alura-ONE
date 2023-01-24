@@ -1,0 +1,105 @@
+
+
+.logo{
+    width: 100px;
+    margin: 20px;
+}
+
+
+main{
+    align-items: auto;
+    display: flex;
+    margin-left: 10%;
+    padding: 30px;
+}
+
+#resultado, #encriptador{
+    margin-right: 60px;
+    padding: 30px; 
+
+}
+
+
+.adv{
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.botonE, .botonD{
+    width: 40%;
+    margin: 1em 1em 0;;
+    padding: 15px 0;
+    font-size: 12px;
+    font-weight: bold;
+    border:none;
+    border-radius: 30px;
+    transition: 1s all;
+    cursor:pointer;
+}
+
+.botonE{
+    color:white;
+    background: darkblue;
+}
+
+.botonE:hover{
+    background: blue;  
+}
+
+.botonD{
+    color:black;
+    background: lightgray;
+}
+
+.botonD:hover{
+    background: gray; 
+    color:lightgray; 
+}
+
+
+
+
+
+.visor-resultado{
+    border: none;
+    background-color: #ffffff;
+    background-image: url("imagenes/Muñeco.png");
+}
+
+.copiar{
+    display: none;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+
+footer{
+    width: 100%;
+    background-color: darkblue;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width:480px){
+
+    main, footer{
+        width: auto;
+        margin: auto;
+        display: block;
+    }
+
+    .adv, .botonD, .botonE{
+        font-size: 10px;
+    }
+
+    .botonD, .botonE{
+        align-items: cennter;
+        width: 130%;
+    }
+    
+    #resultado, #encriptador{
+        width: auto;
+    }
+
+}
