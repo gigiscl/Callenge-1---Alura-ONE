@@ -1,8 +1,9 @@
 
-
 .logo{
     width: 100px;
     margin: 20px;
+
+
 }
 
 
@@ -14,21 +15,36 @@ main{
 }
 
 #resultado, #encriptador{
+    /* background-color: red; */
+    width: 45%;
     margin-right: 60px;
     padding: 30px; 
 
 }
 
+.ingreso, .visor-resultado{
+    width: 100%;
+}
 
-.adv{
+.botones{
+    /* background-color: aqua; */
+    align-items: flex-start;
+    
+}
+
+.advertencia{
+    /* background-color: yellow; */
+}
+
+.adv, .advDos{
     margin-top: 20px;
     display: inline-block;
 }
 
 .botonE, .botonD{
     width: 40%;
-    margin: 1em 1em 0;;
-    padding: 15px 0;
+    margin: 10px 0 0 20px;
+    padding: 12px 0;
     font-size: 12px;
     font-weight: bold;
     border:none;
@@ -64,6 +80,10 @@ main{
     border: none;
     background-color: #ffffff;
     background-image: url("imagenes/Muñeco.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .copiar{
@@ -81,7 +101,7 @@ footer{
     text-align: center;
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:1000px){
 
     main, footer{
         width: auto;
@@ -89,17 +109,13 @@ footer{
         display: block;
     }
 
-    .adv, .botonD, .botonE{
-        font-size: 10px;
-    }
-
-    .botonD, .botonE{
-        align-items: cennter;
-        width: 130%;
+    .botonD, .botonE{       
+        width: 40%;
     }
     
     #resultado, #encriptador{
-        width: auto;
+        align-items: center;
+        width: 90%;
     }
 
 }
