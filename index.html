@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width"> 
+        <link rel="icon" href="imagenes/Logo.png">
         <title>Encriptador - Desencriptador</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">  
@@ -10,7 +11,7 @@
 
     <body>
         <header>
-            <h1><img src="imagenes/logo.png" alt="Logo Alura" class="logo"></h1>
+            <h1><img src="imagenes/alien.png" alt="Logo Alura" class="logo"></h1>
 
         </header>
 
@@ -33,6 +34,7 @@
 
             <section id="resultado">
                 <textarea cols="40" rows="20" class="visor-resultado" readonly="readonly"></textarea>
+                <h2 class="mensaje-resultado">No se encontró ningún texto :(</h2>
 
                 <div class="boton-copiar">
                    <button class="copiar" onclick="copiarTexto();">Copiar</button> 
@@ -61,8 +63,10 @@
     function ocultar(){
 
         var result = document.querySelector(".visor-resultado");
+        var mensaje = document.querySelector(".mensaje-resultado")
         var copiar = document.querySelector(".copiar");
         if(mensaje.value != ""){
+            mensaje.style.display = "none";
             result.style.backgroundImage = "none";
             copiar.style.display = "block";
             
