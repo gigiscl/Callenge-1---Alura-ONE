@@ -1,8 +1,21 @@
 
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 .logo{
+    display: inline-block;
     width: 50px;
     margin: 20px;
+}
+.titulo{
+    position: absolute;
+    top:50px;
+    left: 80px;
+    display: inline;
 
+    font-size: xx-large;
 
 }
 
