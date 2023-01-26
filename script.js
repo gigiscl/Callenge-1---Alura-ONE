@@ -8,7 +8,6 @@
     
     function validar(){
         var permiso = false;
-        var mensaje = document.querySelector(".ingreso");
         var texto = mensaje.value;
 
         if(texto != ""){
@@ -19,16 +18,14 @@
     }
     
     function ocultar(){
-        var parrafo = document.querySelector(".ingreso");
-        var result = document.querySelector(".visor-resultado");
-        var mensaje = document.querySelector(".mensaje-resultado");
+        var mensajeR = document.querySelector(".mensaje-resultado");
         var copiar = document.querySelector(".copiar");
         var acceso = false;
 
         acceso = validar();
         if(acceso){
-            mensaje.style.display = "none";
-            result.style.backgroundImage = "none";
+            mensajeR.style.display = "none";
+            mensajeDos.style.backgroundImage = "none";
             copiar.style.display = "block";
             
         }
@@ -37,11 +34,9 @@
 
 
     function encriptar(){
-        var mensaje = document.querySelector(".ingreso");
-        var mensajeDos = document.querySelector(".visor-resultado");
-        var parrafo = mensaje.value.toLowerCase();
-        var letras = "eoiau";
-        var convierte = ["enter","ober","imes","ai","ufat"];
+        let parrafo = mensaje.value.toLowerCase();
+        let letras = "eoiau";
+        let convierte = ["enter","ober","imes","ai","ufat"];
     
 
         let textoEncriptado = parrafo;
@@ -60,11 +55,9 @@
 
     }
     function desencriptar(){
-        var mensaje = document.querySelector(".ingreso");
-        var mensajeDos = document.querySelector(".visor-resultado");
-        var parrafo = mensaje.value.toLowerCase();
-        var letras = "eoiau";
-        var convierte = ["enter","ober","imes","ai","ufat"];
+        let parrafo = mensaje.value.toLowerCase();
+        let letras = "eoiau";
+        let convierte = ["enter","ober","imes","ai","ufat"];
     
 
         let textoDesencriptado = parrafo;
@@ -79,8 +72,7 @@
     }
 
     function copiarTexto(){
-        var texto = document.querySelector(".visor-resultado");
-        texto.select();
+        mensajeDos.select();
         document.execCommand("copy");
     }
 
@@ -89,6 +81,8 @@
     var encripta = document.querySelector(".botonE");
     var desencripta = document.querySelector(".botonD");
     var mensaje = document.querySelector(".ingreso");
+    var mensajeDos = document.querySelector(".visor-resultado");
+
 
     mensaje.focus();
     encripta.onclick = encriptar;
