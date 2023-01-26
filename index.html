@@ -72,21 +72,20 @@
     
     function validar(){
         var permiso = false;
-        var mensaje = document.querySelector(".visor-resultado")
+        var mensaje = document.querySelector(".ingreso");
         var texto = mensaje.value;
 
         if(texto != ""){
-            alert("acess!");
-           permiso = true; 
+            permiso = true; 
         }
 
         return permiso;
     }
     
     function ocultar(){
-
+        var parrafo = document.querySelector(".ingreso");
         var result = document.querySelector(".visor-resultado");
-        var mensaje = document.querySelector(".mensaje-resultado")
+        var mensaje = document.querySelector(".mensaje-resultado");
         var copiar = document.querySelector(".copiar");
         var acceso = false;
 
@@ -116,7 +115,10 @@
 
 
         ocultar();
-        mensajeDos.value = textoEncriptado;
+        if(parrafo != ""){
+            mensajeDos.value = textoEncriptado;
+        }
+        
 
 
 
@@ -135,7 +137,9 @@
         }
 
         ocultar();
-        mensajeDos.value = textoDesencriptado;
+        if(parrafo != ""){
+            mensajeDos.value = textoDesencriptado;
+        }
     }
 
     function copiarTexto(){
