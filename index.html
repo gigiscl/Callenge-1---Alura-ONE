@@ -11,7 +11,7 @@
 
     <body>
         <header>
-            <h1><img src="imagenes/alien.png" alt="Logo Alura" class="logo"></h1>
+            <h1><img src="imagenes/alien.png" alt="Logo" class="logo"></h1>
 
         </header>
 
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="botones">
-                    <button class="botonE" onclick="ocultar();" onclick="ver();">Encriptar</button>
+                    <button class="botonE" onclick="ocultar();">Encriptar</button>
                     <button class="botonD" onclick="ocultar();">Desencriptar</button>
                 </div>
 
@@ -46,6 +46,12 @@
         </main>
 
         <footer>
+            <div class="redes">
+                <a href="https://github.com/gigiscl" target="_blank"><img src="imagenes/github.png" alt="github" class="github"></a>
+                <a href="https://www.youtube.com/channel/UCbzfh_VNpUavRBLswRrW8iw" target="_blank"><img src="imagenes/youtube.png" alt="youtube" class="youtube">
+</a>
+                
+            </div>            
             <p>"Creado por: Gigi."</p>
             <p class="copyright">&copy Copyright Gigi - 2023</p>
         </footer>
@@ -60,12 +66,29 @@
     }
 
     //La siguiente funcion sirve para que se muestren u oculten elementos en html 
+    
+    function validar(){
+        var permiso = false;
+        var mensaje = document.querySelector(".visor-resultado")
+        var texto = mensaje.value;
+
+        if(texto != ""){
+            alert("acess!");
+           permiso = true; 
+        }
+
+        return permiso;
+    }
+    
     function ocultar(){
 
         var result = document.querySelector(".visor-resultado");
         var mensaje = document.querySelector(".mensaje-resultado")
         var copiar = document.querySelector(".copiar");
-        if(mensaje.value != ""){
+        var acceso = false;
+
+        acceso = validar();
+        if(acceso){
             mensaje.style.display = "none";
             result.style.backgroundImage = "none";
             copiar.style.display = "block";

@@ -109,6 +109,25 @@ footer{
     text-align: center;
 }
 
+
+
+.youtube, .github{
+    cursor: pointer;
+    transition: 1s all;
+}
+
+.github{
+    width: 50px;
+}
+
+.youtube{
+    width: 31px;
+}
+
+.github:hover, .youtube:hover{
+    transform: scale(1.2);
+}
+
 @media screen and (max-width:1000px){
 
     main, footer{
