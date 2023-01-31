@@ -6,11 +6,17 @@
 
     //La siguiente funcion sirve para que se muestren u oculten elementos en html 
     
+    function hayAcentos(msj) {
+        var acentos = /[áéíóúÁÉÍÓÚàèìòùÀÈÌÒÙâêîôûÂÊÎÔÛãõñÑäëïöüÿÄËÏÖÜŸ]/;
+        return acentos.test(msj);
+    }
+
     function validar(){
         var permiso = false;
         var texto = mensaje.value;
 
-        if(texto != ""){
+        let acent = hayAcentos(texto);
+        if((texto != "") && (acent == false) && (texto === texto.toLowerCase())){
             permiso = true; 
         }
 
@@ -34,7 +40,7 @@
 
 
     function encriptar(){
-        let parrafo = mensaje.value.toLowerCase();
+        let parrafo = mensaje.value;
         let letras = "eoiau";
         let convierte = ["enter","ober","imes","ai","ufat"];
     
@@ -44,9 +50,9 @@
             textoEncriptado = textoEncriptado.replaceAll(letras[pos],convierte[pos]);  
         }
 
-
         ocultar();
-        if(parrafo != ""){
+        let imprime = validar();
+        if(imprime){
             mensajeDos.value = textoEncriptado;
         }
         
@@ -66,7 +72,8 @@
         }
 
         ocultar();
-        if(parrafo != ""){
+        let imprime = validar();
+        if(imprime){
             mensajeDos.value = textoDesencriptado;
         }
     }
