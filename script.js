@@ -6,6 +6,11 @@
 
     //La siguiente funcion sirve para que se muestren u oculten elementos en html 
     
+
+    function alertaError(){
+        alert("Ingrese un texto válido. Sin mayúsculas y sin acentos.");
+    }
+
     function hayAcentos(msj) {
         var acentos = /[áéíóúÁÉÍÓÚàèìòùÀÈÌÒÙâêîôûÂÊÎÔÛãõñÑäëïöüÿÄËÏÖÜŸ]/;
         return acentos.test(msj);
@@ -34,6 +39,8 @@
             mensajeDos.style.backgroundImage = "none";
             copiar.style.display = "block";
             
+        }else{
+            alertaError();
         }
         
     }
